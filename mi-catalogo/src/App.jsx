@@ -4,10 +4,7 @@ import { catalogo } from './data/data';
 function App() {
   return (
     <div>
-      <header>
-        <h1>Catalogo de Juegos de Maxi17</h1>
-        <p>Bienvenido a mi primera app en React</p>
-      </header>
+      <CustomHeader />
       
       <main>
         <CardGrid lista={catalogo} />

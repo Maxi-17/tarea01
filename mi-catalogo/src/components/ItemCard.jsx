@@ -4,12 +4,14 @@ function ItemCard({ item }) {
    const handleFavoritoClick = () => {
     setEsFavorito(!esFavorito); 
   };
-
-  const claseTarjeta = item.destacado ? "tarjeta destacado" : "tarjeta";
-
+  
+  let clasesTarjeta = "tarjeta";
+  if (item.destacado) clasesTarjeta += " destacado";
+  if (esFavorito) clasesTarjeta += " favorito";
+  
   return (
-    <div className={claseTarjeta} style={{ border: esFavorito ? '2px solid red' : '1px solid gray' }}>
-      <h3>{item.titulo}</h3>
+    <div className={clasesTarjeta}>
+      <h3 className="texto-resaltado">{item.titulo}</h3>
       <p>Categoría: {item.categoria}</p>
       <p>Año: {item.anio}</p>
       <button onClick={handleFavoritoClick}>
